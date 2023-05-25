@@ -88,22 +88,22 @@ tipFIS.Outputs(1).Name='diagnostico';
 tipFIS.Outputs(1).Range=[0 100];
 tipFIS.Outputs(1).MembershipFunctions(1).Name='normal';
 tipFIS.Outputs(1).MembershipFunctions(1).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(1).Parameters=[0 15 30];
+tipFIS.Outputs(1).MembershipFunctions(1).Parameters=[0 5 15];
 tipFIS.Outputs(1).MembershipFunctions(2).Name='IR-Etapa 1';
 tipFIS.Outputs(1).MembershipFunctions(2).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(2).Parameters=[15 30 45];
+tipFIS.Outputs(1).MembershipFunctions(2).Parameters=[5 15 25];
 tipFIS.Outputs(1).MembershipFunctions(3).Name='IR-Etapa 2';
 tipFIS.Outputs(1).MembershipFunctions(3).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(3).Parameters=[30 45 60];
+tipFIS.Outputs(1).MembershipFunctions(3).Parameters=[15 25 30];
 tipFIS.Outputs(1).MembershipFunctions(4).Name='IR-Etapa 3';
 tipFIS.Outputs(1).MembershipFunctions(4).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(4).Parameters=[45 60 75];
+tipFIS.Outputs(1).MembershipFunctions(4).Parameters=[25 30 45];
 tipFIS.Outputs(1).MembershipFunctions(5).Name='IR-Etapa 4';
 tipFIS.Outputs(1).MembershipFunctions(5).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(5).Parameters=[60 75 90];
+tipFIS.Outputs(1).MembershipFunctions(5).Parameters=[15 25 30];
 tipFIS.Outputs(1).MembershipFunctions(6).Name='IR-Etapa 5';
 tipFIS.Outputs(1).MembershipFunctions(6).Type='trimf';
-tipFIS.Outputs(1).MembershipFunctions(6).Parameters=[75 90 100];
+tipFIS.Outputs(1).MembershipFunctions(6).Parameters=[15 25 30];
 
 subplot(3,2,1)
 plotmf(tipFIS,'input',1,1000);
