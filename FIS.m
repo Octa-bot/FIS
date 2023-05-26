@@ -86,7 +86,7 @@ tipFIS.Inputs(4).MembershipFunctions(5).Parameters=[108 110 130 130];
 %actualizar salida
 tipFIS.Outputs(1).Name='diagnostico';
 tipFIS.Outputs(1).Range=[0 100];
-tipFIS.Outputs(1).MembershipFunctions(1).Name='normal';
+tipFIS.Outputs(1).MembershipFunctions(1).Name='riñon sano';
 tipFIS.Outputs(1).MembershipFunctions(1).Type='trimf';
 tipFIS.Outputs(1).MembershipFunctions(1).Parameters=[0 15 30];
 tipFIS.Outputs(1).MembershipFunctions(2).Name='IR-Etapa 1';
@@ -118,15 +118,18 @@ plotmf(tipFIS,'output',1,1000);
 
 %especificas reglas difusas
 rules=[...
-    "If servicio is pobre or food is rancio then propina is baja";...
-    "If servicio is buena then propina is promedio";...
-    "If servicio is excelente or food is delicioso then propina is alta"...
+    "If creatinina is bajo and filtracion glomerular is alto and presion sistolica is normal and presion diastolica is normal then diagnostico is riñon sano";...
+    "If creatinina is bajo or medio bajo and filtracion glomerular is medio alto and presion sistolica is normal or ligeramente alto and presion diastolica is normal or ligeramente alto then diagnostic is IR – Etapa 1";...
+    "If creatinina is medio and filtracion glomerular is medio and presion sistolica is elevada or hipertension moderada and presion diastolica is elevada or hipertension moderada then diagnostic is IR – Etapa 2"...
+    "If creatinina is medio alto and filtracion glomerular is medio and presion sistolica is hipertension severa and presion diastolica is hipertension severa then diagnostic is IR – Etapa 3"...
+    "If creatinina is medio alto or alto and filtracion glomerular is medio bajo and presion sistolica is hipertension severa and presion diastolica is hipertension severa then diagnostic is IR – Etapa 4"...
+    "If creatinina is alto and filtracion glomerular is bajo and presion sistolica is hipertension severa and presion diastolica is hipertension severa then diagnostico is IR - Etapa 5"...
     ];
 figure
 tipFIS=addRule(tipFIS,rules);
 gensurf(tipFIS)
 
 %agregar nuevas reglas
-new_rule="If food is bien then propina is alta";
-tipFIS=addRule(tipFIS,new_rule);
-gensurf(tipFIS);
+%new_rule="If food is bien then propina is alta";
+%tipFIS=addRule(tipFIS,new_rule);
+%gensurf(tipFIS);
